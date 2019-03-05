@@ -44,7 +44,7 @@ if(FULL_BUILD) {
     }
 }
 
-if(FULL_BUILD) {
+/*if(FULL_BUILD) {
     stage('Static Analysis') {
         node {
             withEnv(["PATH+MAVEN=${tool 'm3'}/bin"]) {
@@ -56,7 +56,7 @@ if(FULL_BUILD) {
             }
         }
     }
-}
+}*/
 
 if(FULL_BUILD) {
     stage('Approval') {
