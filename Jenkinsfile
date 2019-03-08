@@ -109,6 +109,8 @@ stage('Deploy') {
         }
         def artifactUrl = "http://${NEXUS_URL}/repository/maven-releases/${repoPath}/${version}/${pom.artifactId}-${version}.war"
 
+        def appName = pom.artifactId
+        
         withEnv(["ARTIFACT_URL=${artifactUrl}", "APP_NAME=${pom.artifactId}"]) {
             echo "The URL is ${env.ARTIFACT_URL} and the app name is ${env.APP_NAME}"
 
@@ -125,7 +127,7 @@ stage('Deploy') {
             sudoUser: 'jenkins',
             extraVars: [
                 ARTIFACT_URL: artifactUrl,
-                APP_NAME: '${env.APP_NAME}'
+                APP_NAME: appName
             ] 
             //'--extra-vars  "ARTIFACT_URL=${env.ARTIFACT_URL} APP_NAME=${env.APP_NAME}" '
         }
