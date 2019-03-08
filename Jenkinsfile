@@ -123,7 +123,7 @@ stage('Deploy') {
             playbook: 'provision/playbook.yml', 
             sudo: true,
             sudoUser: 'jenkins',
-            extras: '--extra-vars  ARTIFACT_URL="${env.ARTIFACT_URL}" APP_NAME="${env.APP_NAME}" '
+            extras: '--extra-vars  "ARTIFACT_URL=${env.ARTIFACT_URL} APP_NAME=${env.APP_NAME}" '
         }
     }
 }
