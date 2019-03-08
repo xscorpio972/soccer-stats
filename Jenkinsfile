@@ -124,8 +124,8 @@ stage('Deploy') {
             sudo: true,
             sudoUser: 'jenkins',
             extraVars: [
-                ARTIFACT_URL: ${env.ARTIFACT_URL},
-                APP_NAME: ${env.APP_NAME}
+                ARTIFACT_URL: '${env.ARTIFACT_URL}',
+                APP_NAME: '${env.APP_NAME}'
             ] 
             //'--extra-vars  "ARTIFACT_URL=${env.ARTIFACT_URL} APP_NAME=${env.APP_NAME}" '
         }
