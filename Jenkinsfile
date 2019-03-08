@@ -122,7 +122,9 @@ stage('Deploy') {
             inventory: 'provision/inventory.ini', 
             playbook: 'provision/playbook.yml', 
             sudo: true,
-            sudoUser: 'jenkins'
+            sudoUser: 'jenkins',
+            extraVars: """---ARTIFACT_URL:  "${env.ARTIFACT_URL}" APP_NAME: "${env.APP_NAME}" """
         }
     }
 }
+ 
